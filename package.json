@@ -8,11 +8,6 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-http": "^4.2.1",
-    "mocha": "^5.0.0"
-  },
   "dependencies": {
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
