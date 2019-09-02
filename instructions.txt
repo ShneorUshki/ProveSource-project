@@ -1,11 +1,13 @@
-All additions/enhancements to code should include a test for the scenario.
+GIT:
+- Every task needs to be commited separately, with a clear message (best practices: https://chris.beams.io/posts/git-commit/).
+- Upload the repo to your github.
 
-Account create API:
+Enhance Account API:
 1) Improve /account/create API so it only accepts POST requests.
 2) Improve /account/create API so it returns an error if account with same email exists (i.e. make email unique in database)
-error response should be json: {"err": "email already exists"}
+error response should be json: {"error": "email already exists"}
 
-Notifications API (each task should be in separate file):
+Create Notifications API:
 1) Add a POST /notifications API that adds a notification to the database: accountId, name and color
 2) Add a "GET /notifications?accountId=" API that returns the notifications for given accountId (query param)
-3) Add a "DELETE /notifications?accountId=&color=" API that deletes notifications that contain color text and are only from specified account
+3) Add a "DELETE /notifications?accountId={id}&color={color}" API that deletes notifications that contain color text and are only from specified account
