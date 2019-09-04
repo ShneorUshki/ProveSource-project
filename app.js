@@ -1,19 +1,20 @@
 const express = require('express');
 const mongoose = require('mongoose');
+const account = require('./api/account/create')
+const port = 3000
 
-mongoose.connect('mongodb://localhost:27017/codeTest', {
+mongoose.connect('mongodb://127.0.0.1:27017/codeTest', {
 	autoReconnect: true,
 	reconnectTries: 60,
 	reconnectInterval: 10000
 });
 
 const app = express();
-app.listen(3000);
 
 app.use(require('body-parser').json());
 
-app.use('/account/create', require('./api/account/create'));
+app.use('/account/create', account);
 
-console.log('app running on port 3000...');
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
 
 module.exports = app;
