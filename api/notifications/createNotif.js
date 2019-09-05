@@ -24,4 +24,16 @@ router.get("/", async (req, res) => {
       res.send({ error: err.message });
     });
 });
+
+router.delete("/delete-user", (req, res) => {
+  const { accountId, color } = req.query;
+  Notifications.findOneAndDelete({ accountId: accountId, color: color })
+    .then(() => {
+      res.send({ succes: true, message: `Account ${accountId} deleted!` });
+    })
+    .catch(err => {
+      res.send(err);
+    });
+});
+
 module.exports = router;
